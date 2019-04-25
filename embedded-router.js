@@ -3,6 +3,9 @@ $(document).ready(function()
     // determines whether a URL matches a pattern and parses the URL parameters
     const urlMatchesPattern = function(url, pattern)
     {
+        if(typeof url == 'undefined' || typeof pattern == 'undefined')
+            return false;
+        
         const variableFinder = /\:[a-zA-Z0-9_]*/g;
         let variable, index = 0, variables = [], urlRegex = '^';
         
@@ -74,7 +77,7 @@ $(document).ready(function()
             }
         
         // if hash is set, but no matching route was found, load error route
-        if(window.hash !== '')
+        if(window.location.hash !== '')
             for(let route of routes)
                 if(route.notFoundRoute)
                     return void viewer.load(route.file);
