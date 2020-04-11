@@ -2,8 +2,8 @@
   "name": "embedded-router",
   "version": "1.0.0",
   "description": "simple JavaScript front-end router",
-  "install": "node install.js",
   "scripts": {
+    "install": "node install.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
